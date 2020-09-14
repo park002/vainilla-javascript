@@ -10,3 +10,6 @@
 .showing{
     display: block;
 }
+.js-toDoForm input{
+    width: 14%;
+}
