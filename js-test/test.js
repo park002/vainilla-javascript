@@ -1,8 +1,12 @@
-//콜백함수 => 콜백함수는 함수로써 다른 함수의 인자로 넘겨지는 함수다.
-function add(x, y, callback) {
-    const sum = x + y;
-    callback(sum);
+const input = document.querySelector('input');
+const weather = [
+    {
+        id: 801,
+        main: "clouds"
+    }
+];
+
+function handleInput() {
+ console.log(weather);
 }
-add(5, 5, function(result) {
-    console.log(result);
-})
+input.addEventListener("click", handleInput);
