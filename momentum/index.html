@@ -6,31 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momentum
     </title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <div class="js-clock">
-        <h1>00:00</h1>
-    </div>
-    <form class="js-form form">
-        <input type="text" placeholder="what is your name?" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
+    <header class="header">
+        <div class="header__links">
+            <span class="header__link js-header__links">
+                Links
+            </span>
+            <span class="header__links-icon"><i class="fas fa-search "></i></span>
+            <input type="text" class="header__links-search" />
+        </div>
+
+        <div class="header__weather">
+            <span class="js-weather"></span>
+            <span class="js-weather__address"></span>
+        </div>
+
+        <div class="header__dropdown-container">
+            <!-- Links 클릭 했을 경우 open -->
+            <ol class="header__dropdown-lists">
+                <li class="header__dropdown-list">
+                    <a href="#">
+                        <span>
+                            <i class="fab fa-chrome"></i>
+                        </span>
+                        Chrome Tab
+                    </a>
+                </li>
+                <li class="header__dropdown-list">
+                    <a href="#">
+                        <span>
+                            <i class="fas fa-bars"></i>
+                        </span>
+                        Apps
+                    </a>
+                </li>
+                <li class="header__dropdown-list">
+                    <span>
+                        <i class="fas fa-plus fa-xs"></i>
+                    </span>
+                    <span class="js-header__add-link">
+                        New Link
+                    </span>
+                </li>
+            </ol>
+            <div class="header__dropdown-detail">
+                <!-- 위에 New Link 클릭 시  펼쳐진다 -->
+                <div class="header__dropdown-info">
+                    <span><i class="fas fa-arrow-left"></i></span>
+                    <label for="header__dropdown-info__name">Name</label>
+                    <input type="text" id="header__dropdown-info__name" />
+                </div>
+                <div class="header__dropdown-info">
+                    <label for="header__dropdown-info__link-name">links</label>
+                    <input type="text" id="header__dropdown-info__link-name" />
+                </div>
+                <div class="header__dropdown-info">
+                    <span> <i class="fas fa-plus fa-xs"></i></span>
+                    <button>Create</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <header class="clock">
+            <div class="js-clock clock__container">
+                <h1>00:00</h1>
+            </div>
+            <div class="clock__container">
+                <form class="js-form clock__form">
+                    <input type="text" placeholder="what is your name?" />
+                </form>
+                <h4 class="js-greetings clock__greetings"></h4>
+            </div>
+        </header>
+        <section class="section">
+            <form class="js-toDoForm section__form">
+                <p class="section__title">What is your main focus for today?</p>
+                <input type="text"/>
+            </form>
+            <ul class="js-toDoList section__lists">
+            </ul>
+        </section>
+    </main>
 
 
-    <form class="js-toDoForm">
-        <input type="text" placeholder="what is your main focus for today?" />
-    </form>
-    <ul class="js-toDoList">
-    </ul>
-    <span class="js-weather"> </span>
 
-    <script src="./clock.js"></script>
-    <script src="./gretting.js"></script>
-    <script src="./todo.js"></script>
-    <script src="./bg.js"></script>
-    <script src="./weather.js"></script>
+    <script src="https://kit.fontawesome.com/425d9cd4a2.js" crossorigin="anonymous"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/gretting.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/bg.js"></script>
+    <script src="./js/weather.js"></script>
 </body>
 
 </html>

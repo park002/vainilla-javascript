@@ -1,6 +1,7 @@
 const form = document.querySelector('.js-form'),
     input = form.querySelector('input'),
-    greetings = document.querySelector('.js-greetings');
+    greetings = document.querySelector('.js-greetings'),
+    toDoFormCheck = document.querySelector('.js-toDoForm');
 
 const CURRENT_USER = 'currentUser';
 const SHOWING_CLASS = 'showing';
@@ -8,8 +9,9 @@ const SHOWING_CLASS = 'showing';
 
 function paintGreeting() {//아이디가 있다면
     form.classList.remove(SHOWING_CLASS);
+    toDoFormCheck.classList.add(SHOWING_CLASS);
     greetings.classList.add(SHOWING_CLASS);
-    greetings.innerText = `HELLO!! ${localStorage.getItem(CURRENT_USER)}`;
+    greetings.innerText = `Good afternoon , ${localStorage.getItem(CURRENT_USER)}`;
 }
 function handleSubmit(event) { //아이디가 없다면
     event.preventDefault(form);

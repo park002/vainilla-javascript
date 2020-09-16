@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const IMG_NUMBER = 6;
+const IMG_NUMBER = 1;
 
 function paintImg(number) {
     const image = new Image();
@@ -9,7 +9,7 @@ function paintImg(number) {
 }
 
 function genRandom() {
-     return Math.floor((Math.random() * IMG_NUMBER) + 1); // 1~7미만의 난수 생성
+     return Math.floor((Math.random() * IMG_NUMBER) + 1); // 1~2미만의 난수 생성
 }
 
 function init() {

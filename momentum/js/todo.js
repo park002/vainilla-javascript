@@ -58,6 +58,7 @@ function loadToDos() {
         parsedToDos.forEach(something);
     }
 }
+
 function init() {
     loadToDos();
 }

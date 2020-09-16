@@ -1,16 +1,18 @@
 const API_KEY = 'a7f385b43943a18ee07ce20bb09e343c';
 const LOCATION_LS = 'location';
+
 const weather = document.querySelector('.js-weather');
+const address = document.querySelector('.js-weather__address');
 
 function saveLocation(locationObj) {
     localStorage.setItem(LOCATION_LS, JSON.stringify(locationObj));
 }
-function callApi(locationObj) {
-    console.log(locationObj);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${locationObj.latitude}&lon=${locationObj.longitude}&appid=${API_KEY}&units=metric`).then(function (response) {
+function getWeather(lat, long) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`).then(function (response) {
         return response.json();
     }).then(function (json) {
-        weather.innerText = `${json.sys.country} - ${json.name} @ ${json.main.temp} ${json.weather[0].main}`;
+        weather.innerText = `${String(json.main.temp).substring(0, 2) + `°`}`;
+        address.innerText = `${json.name}`;
     });
 }
 function locationSuccess(position) {
@@ -20,14 +22,12 @@ function locationSuccess(position) {
         latitude,
         longitude,
     };
+    getWeather(locationObj.latitude, locationObj.longitude);
     saveLocation(locationObj);
-    callApi(locationObj);
-
 }
-
 function askForLocation() {
-    navigator.geolocation.getCurrentPosition(locationSuccess, function (error) {
-        alert(error.message);
+    navigator.geolocation.getCurrentPosition(locationSuccess, function(error) {
+        console.log(error.message);
     });
 }
 function loadLocation() {
@@ -38,7 +38,7 @@ function loadLocation() {
     }
     else { //좌표값이 있다면.
         const parseLocation = JSON.parse(location);
-        callApi(parseLocation);
+        getWeather(parseLocation.latitude, parseLocation.longitude);
     }
 }
 function init() {
