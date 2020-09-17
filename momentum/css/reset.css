@@ -55,6 +55,7 @@ input {
 	font-family: 'Open Sans', sans-serif;
 	border: none;
 }
+
 button:active,
 button:focus,
 input:active,
@@ -67,7 +68,7 @@ textarea:focus{
 .clock__form,
 .clock__greetings,
 .section__form,
-.header__dropdown-container,
+.header__dropdown-section,
 .header__dropdown-detail{
     display: none;
 }

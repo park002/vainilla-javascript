@@ -11,33 +11,48 @@ body {
     color: #ffffff;
     overflow: hidden;
 }
+
 /* header - CSS */
 .header{
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:18px;
 }
 .header__link{
+    /* ToDo */
+    cursor: pointer;
     font-size: 18px;
 }
+.header__link-hide{
+    opacity: 0;
+    visibility: hidden;
+}
+
 .header__links-icon{
+    cursor: pointer;
     position: relative;
     left: 15px;
     top: -1px;
 }
+
 .header__links-search{
     /* visibility: hidden; */
-    font-size: 8px;
+    font-size: 15px;
     padding:4px 16px;
     border-bottom: 0 solid rgba(230, 222, 222, 0.5);
-    width: 140px;
+    width: 75%;
     transition: border-bottom 40ms linear;
 }
 .header__links-search:hover{
+    cursor: pointer;
     border-bottom: 1px solid rgba(230, 222, 222, 0.5);
 }
 .header__links-search:focus{
+    cursor: auto;
     border-bottom: var(--border-bottom);
 }
 .header__weather{
@@ -54,13 +69,64 @@ body {
     margin-top: 4px;
     font-size: 16px;
 }
+
+/* dropdown-section CSS */
+.header__dropdown-section{
+    top: 80px;
+    left: 15px;
+    position: fixed;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 13%;
+}
+ .header__dropdown-section::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 9px solid #ffffff;
+    border-right: 8px solid transparent;
+}
+.header__dropdown-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 20px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.header__dropdown-list{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+.header__dropdown-list:hover{
+    color: black;
+    cursor: pointer;
+}
+.header__dropdown-list__item{
+    margin-left: 6px;
+}
+.header__dropdown-list:last-child .header__dropdown-list__item{
+    margin-left: 10px;
+}
+.header__dropdown-list:last-child span{
+    color:rgba(0, 0, 0, 0.3);
+}
+.header__dropdown-list:last-child span:hover{
+    color : black;
+}
+
 /* main - header - CSS */
 #main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    height: 100vh;
 }
 .clock__container{
     display: flex;
@@ -70,7 +136,7 @@ body {
 }
 
 .clock__container h1{
-    font-size:180px;
+    font-size:170px;
 }
 .clock__form{
     width: 100%;

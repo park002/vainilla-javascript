@@ -17,13 +17,15 @@
             </span>
             <span class="header__links-icon"><i class="fas fa-search "></i></span>
             <input type="text" class="header__links-search" />
-        </div>
 
+        </div>
         <div class="header__weather">
             <span class="js-weather"></span>
             <span class="js-weather__address"></span>
         </div>
+    </header>
 
+    <section class="header__dropdown-section">
         <div class="header__dropdown-container">
             <!-- Links 클릭 했을 경우 open -->
             <ol class="header__dropdown-lists">
@@ -32,7 +34,9 @@
                         <span>
                             <i class="fab fa-chrome"></i>
                         </span>
-                        Chrome Tab
+                        <span class="header__dropdown-list__item">
+                            Chrome Tab
+                        </span>
                     </a>
                 </li>
                 <li class="header__dropdown-list">
@@ -40,36 +44,40 @@
                         <span>
                             <i class="fas fa-bars"></i>
                         </span>
-                        Apps
+                        <span class="header__dropdown-list__item">
+                            Apps
+                        </span>
                     </a>
                 </li>
-                <li class="header__dropdown-list">
-                    <span>
+                <li class="js-header__add-link header__dropdown-list">
+                    <span class="header__dropdown-list__icon">
                         <i class="fas fa-plus fa-xs"></i>
                     </span>
-                    <span class="js-header__add-link">
+                    <span class="header__dropdown-list__item">
                         New Link
                     </span>
                 </li>
             </ol>
-            <div class="header__dropdown-detail">
-                <!-- 위에 New Link 클릭 시  펼쳐진다 -->
-                <div class="header__dropdown-info">
-                    <span><i class="fas fa-arrow-left"></i></span>
-                    <label for="header__dropdown-info__name">Name</label>
-                    <input type="text" id="header__dropdown-info__name" />
-                </div>
-                <div class="header__dropdown-info">
-                    <label for="header__dropdown-info__link-name">links</label>
-                    <input type="text" id="header__dropdown-info__link-name" />
-                </div>
-                <div class="header__dropdown-info">
-                    <span> <i class="fas fa-plus fa-xs"></i></span>
-                    <button>Create</button>
-                </div>
+        </div>
+
+        <div class="header__dropdown-detail">
+            <!-- 위에 New Link 클릭 시  펼쳐진다 -->
+            <div class="header__dropdown-info">
+                <span><i class="fas fa-arrow-left"></i></span>
+                <label for="header__dropdown-info__name">Name</label>
+                <input type="text" id="header__dropdown-info__name" />
+            </div>
+            <div class="header__dropdown-info">
+                <label for="header__dropdown-info__link-name">links</label>
+                <input type="text" id="header__dropdown-info__link-name" />
+            </div>
+            <div class="header__dropdown-info">
+                <span> <i class="fas fa-plus fa-xs"></i></span>
+                <button>Create</button>
             </div>
         </div>
-    </header>
+    </section>
+
 
     <main id="main">
         <header class="clock">
@@ -86,7 +94,7 @@
         <section class="section">
             <form class="js-toDoForm section__form">
                 <p class="section__title">What is your main focus for today?</p>
-                <input type="text"/>
+                <input type="text" />
             </form>
             <ul class="js-toDoList section__lists">
             </ul>
@@ -101,6 +109,7 @@
     <script src="./js/todo.js"></script>
     <script src="./js/bg.js"></script>
     <script src="./js/weather.js"></script>
+    <script src="./js/dropdown.js"></script>
 </body>
 
 </html>
