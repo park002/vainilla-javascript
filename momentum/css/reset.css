@@ -73,7 +73,7 @@ textarea:focus{
     display: none;
 }
 .showing{
-    display: block;
+	display: block;
 }
 input {
 	background: transparent;

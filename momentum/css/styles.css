@@ -14,7 +14,6 @@ body {
 
 /* header - CSS */
 .header{
-    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
@@ -27,11 +26,6 @@ body {
     cursor: pointer;
     font-size: 18px;
 }
-.header__link-hide{
-    opacity: 0;
-    visibility: hidden;
-}
-
 .header__links-icon{
     cursor: pointer;
     position: relative;
@@ -69,15 +63,14 @@ body {
     margin-top: 4px;
     font-size: 16px;
 }
-
 /* dropdown-section CSS */
 .header__dropdown-section{
-    top: 80px;
-    left: 15px;
     position: fixed;
+    top: 80px;
     background-color: #ffffff;
     border-radius: 5px;
     width: 13%;
+    left: 15px;
 }
  .header__dropdown-section::before {
     content: '';
@@ -102,8 +95,11 @@ body {
     margin-top: 8px;
     display: flex;
     align-items: center;
+    transition: transform 0.3s linear;
 }
+
 .header__dropdown-list:hover{
+    transform:translateX(5px);
     color: black;
     cursor: pointer;
 }
@@ -119,14 +115,16 @@ body {
 .header__dropdown-list:last-child span:hover{
     color : black;
 }
-
+.header__dropdown-detail{
+    color: black;
+}
 /* main - header - CSS */
 #main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 .clock__container{
     display: flex;
