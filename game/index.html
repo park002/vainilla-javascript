@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <main class="main">
+        <img src="./img/background.png" class="background-image">
+        <header class="header">
+            <button class="header__play-btn">
+                <i class="fas fa-play"></i>
+                <!-- <i class="fas fa-square"></i> -->
+            </button>
+            <div class="header__time">
+                <span id="time">0:0</span>
+            </div>
+            <div class="header__counter">
+                <span>0</span>
+            </div>
+        </header>
+        <section class="image-group">
+            <img src="./img/bug.png" class="bug-image">
+            <img src="./img/carrot.png" class="carrot-image">
+        </section>
+        <article class="model">
+            <button class="model__redo">
+                <i class="fas fa-redo"></i>
+            </button>
+            <span>you win 🍉</span>
+        </article>
+    </main>
+    <script src="https://kit.fontawesome.com/425d9cd4a2.js" crossorigin="anonymous"></script>
+    <script src="./game.js"></script>
+</body>
+
+</html>
