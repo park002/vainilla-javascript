@@ -11,11 +11,8 @@ function deleteToDo(event) {
     const li = btn.parentNode;
     toDoList.removeChild(li);
     const cleanToDos = toDosArray.filter(function (toDoArr) {
-        console.log("toDoArr.id =>" + toDoArr.id + " li.id =>" + li.id);
-        return toDoArr.id !== parseInt(li.id); //같지 않을 경우 true 라서 새로운 배열 생성
+        return toDoArr.id !== parseInt(li.id); 
     });
-    console.log("toDosArray => " + JSON.stringify(toDosArray));
-    console.log("cleanToDos => " + JSON.stringify(cleanToDos));
     toDosArray = cleanToDos;
     saveToDos();
 }

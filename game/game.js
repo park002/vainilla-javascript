@@ -1,6 +1,6 @@
 const playBtn = document.querySelector('.header__play-btn');
 const time = document.querySelector('#time');
-
+const imgGroup = document.querySelector('.image-group');
 let i = 0;
 function timeCheck() {
     const date = new Date();
@@ -12,6 +12,17 @@ function timeCheck() {
         return;
     }
     setTimeout(timeCheck, 1000);
+}
+function carrotLayout() {
+    const carrot = new Image();
+    const bug = new Image();
+    bug.src = './img/bug.png';
+    carrot.src = './img/carrot.png';
+    imgGroup.appendChild(bug);
+    imgGroup.appendChild(carrot);
+    const rect = imgGroup.getBoundingClientRect();
+    console.dir(rect.width);
+    const a = Math.random(rect.width);
 }
 playBtn.addEventListener('click', event => {
     if (event.target.tagName === "I") {
@@ -27,6 +38,6 @@ playBtn.addEventListener('click', event => {
         event.target.appendChild(iTag2);
     }
     timeCheck();
-
+    carrotLayout();
 })
 
